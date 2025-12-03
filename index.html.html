@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-Owned Business Christmas Magazine 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f5f0 0%, #fff9f0 100%);
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+            color: #d4af37;
+            opacity: 0.6;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover {
+            background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #FFD700 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '❄';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            left: -50px;
+            animation: spin 20s linear infinite;
+        }
+
+        .cover::after {
+            content: '✨';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -40px;
+            right: -40px;
+            animation: spin 15s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cover h1 {
+            font-size: 56px;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .cover h2 {
+            font-size: 32px;
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .cover p {
+            font-size: 20px;
+            color: #FFF8DC;
+            margin-top: 10px;
+        }
+
+        .nav-controls {
+            position: sticky;
+            top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            border: 3px solid #FFD700;
+        }
+
+        .nav-controls button {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139,0,0,0.3);
+        }
+
+        .nav-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139,0,0,0.4);
+        }
+
+        .page-indicator {
+            font-size: 18px;
+            color: #8B0000;
+            font-weight: bold;
+            padding: 10px 20px;
+            background: #FFD700;
+            border-radius: 20px;
+        }
+
+        .business-page {
+            background: white;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            position: relative;
+            border: 5px solid #FFD700;
+            overflow: hidden;
+        }
+
+        .business-page::before {
+            content: '🎄';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 60px;
+            opacity: 0.1;
+        }
+
+        .business-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .business-name {
+            font-size: 42px;
+            color: #8B0000;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .business-category {
+            font-size: 24px;
+            color: #DC143C;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .business-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #FFD700;
+        }
+
+        .info-section h3 {
+            color: #8B0000;
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section h3::before {
+            content: '✨';
+            font-size: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .info-item strong {
+            color: #8B0000;
+            font-weight: bold;
+        }
+
+        .website-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(220,20,60,0.3);
+        }
+
+        .website-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(220,20,60,0.4);
+        }
+
+        .founder-section {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 25px;
+            border-radius: 15px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .founder-section h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            font-style: italic;
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 4px solid white;
+        }
+
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #FFD700;
+            color: #8B0000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        @media print {
+            .nav-controls, .print-button, .snowflake {
+                display: none;
+            }
+            .business-page {
+                page-break-after: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .business-content {
+                grid-template-columns: 1fr;
+            }
+            .cover h1 {
+                font-size: 36px;
+            }
+            .business-name {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <h1>🎄 Celebrate the Season 🎄</h1>
+            <h2>Black-Owned Business Directory</h2>
+            <p style="font-size: 28px; margin-top: 30px;">Christmas 2025</p>
+            <p style="margin-top: 20px;">Support • Shop • Celebrate</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-controls">
+            <button onclick="prevPage()">⬅ Previous</button>
+            <span class="page-indicator" id="pageIndicator">Page 1 of 30</span>
+            <button onclick="nextPage()">Next ➡</button>
+            <button onclick="showAll()" style="background: linear-gradient(135deg, #FFD700, #FFA500);">View All</button>
+        </div>
+
+        <!-- Business Pages -->
+        <div id="businessPages"></div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">🖨️ Print Magazine</button>
+
+    <script>
+        // Snowflakes
+        function createSnowflakes() {
+            for (let i = 0; i < 20; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = ['❄', '✨', '⭐'][Math.floor(Math.random() * 3)];
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (Math.random() * 5 + 10) + 's';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowflake.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                document.body.appendChild(snowflake);
+            }
+        }
+        createSnowflakes();
+
+        const businesses = [
+            {
+                name: "The Lip Bar",
+                website: "thelipbar.com",
+                category: "Makeup & Beauty",
+                products: "Premium makeup products celebrating diversity and self-expression",
+                description: "Empowering beauty brand offering high-quality, cruelty-free makeup for all skin tones."
+            },
+            {
+                name: "Estelle Colored Glass",
+                website: "estellecoloredglass.com",
+                category: "Luxury Home Décor",
+                products: "Hand-blown colored glass cake stands and stemware",
+                founder: "Stephanie Summerson Hall",
+                description: "Luxury brand specializing in exquisite hand-blown and specialty made colored glass pieces for elegant entertaining."
+            },
+            {
+                name: "KHOI",
+                website: "shopkhoi.com",
+                category: "Jewelry & Accessories",
+                products: "Elegant jewelry and fashion accessories",
+                founder: "Hayet Rida-Amissah",
+                description: "Curated collection of sophisticated jewelry and accessories for the modern woman."
+            },
+            {
+                name: "Jolie Noire",
+                website: "joliexnoire.com",
+                category: "Women's Athleisure",
+                products: "Elevated athleisure wear",
+                founder: "Keyondra & Kim (Sisters)",
+                quote: "Black is beautiful. Jolie Noire stands for Pretty Black in French. We're working to shape minds and change the meaning, emotions, and values associated with black.",
+                description: "Empowering women, specifically Black women, through stylish Christian athleisure that celebrates beauty and faith."
+            },
+            {
+                name: "Pleasures of the Sea",
+                website: "pleasureofthesea.net",
+                category: "Seafood Restaurant",
+                address: "1900 NW 6th Street, Ft. Lauderdale, FL 33311",
+                phone: "954-440-4411",
+                products: "Fresh seafood dining experience",
+                description: "Local Fort Lauderdale favorite serving delicious seafood in a welcoming atmosphere."
+            },
+            {
+                name: "Abeille Creations",
+                website: "melissaamitchell.com",
+                category: "Fashion & Accessories",
+                products: "Unique clothing and accessories",
+                description: "Creative fashion designs that blend style with artistic expression."
+            },
+            {
+                name: "Be Rooted",
+                website: "berootedco.com",
+                category: "Stationery & Gifts",
+                products: "Beautiful stationery and thoughtful gifts",
+                description: "Inspiring stationery and gift items designed to help you stay grounded and organized."
+            },
+            {
+                name: "Power in Black",
+                website: "powerinblack.com",
+                category: "Apparel",
+                products: "Bold statement clothing",
+                description: "Empowering clothing brand celebrating Black excellence and cultural pride."
+            },
+            {
+                name: "Naija Luxe",
+                website: "naijaluxe.co",
+                category: "Fashion & Lifestyle",
+                products: "Luxury African-inspired fashion",
+                description: "Celebrating Nigerian heritage through luxurious fashion and lifestyle products."
+            },
+            {
+                name: "Melanin Apparel",
+                website: "melaninapparel.com",
+                category: "Clothing",
+                products: "Culturally conscious apparel",
+                description: "Fashion that celebrates melanin and cultural identity with pride."
+            },
+            {
+                name: "Cecilia House",
+                website: "ceciliashouse.com",
+                category: "Fashion Boutique",
+                products: "Curated women's clothing",
+                description: "Elegant and sophisticated clothing for the discerning woman."
+            },
+            {
+                name: "Plair Sports and Apparel",
+                website: "Psamaxx.com",
+                category: "Athletic Wear",
+                products: "Sports clothing and accessories",
+                description: "Performance athletic wear designed for active lifestyles."
+            },
+            {
+                name: "Black Owned Games",
+                website: "blackownedgames.com",
+                category: "Gaming & Entertainment",
+                products: "Board games and entertainment",
+                description: "Celebrating Black culture through fun and engaging games for all ages."
+            },
+            {
+                name: "Pardon my Fro",
+                website: "pardonmyfro.com",
+                category: "Natural Hair & Accessories",
+                products: "Natural hair clothing and accessories",
+                description: "Celebrating natural hair beauty with stylish apparel and accessories."
+            },
+            {
+                name: "Imani Oliver",
+                website: "Imanioliver.com",
+                category: "Publishing & Literature",
+                products: "Books and published works",
+                description: "Author and publisher sharing powerful stories and narratives."
+            },
+            {
+                name: "Sweet Dreams Pies",
+                website: "N/A",
+                category: "Local Bakery",
+                address: "877 SW 2nd Ter., Deerfield Beach, FL 33441",
+                phone: "407-230-0483",
+                products: "Delicious homemade pies and baked goods",
+                description: "Local Deerfield Beach bakery creating sweet memories with every slice."
+            },
+            {
+                name: "Dream T's",
+                website: "N/A",
+                category: "Custom Apparel",
+                address: "877 SW 2nd Ter., Deerfield Beach, FL 33441",
+                phone: "407-230-0483",
+                products: "T-shirt printing and custom design",
+                description: "Bringing your creative visions to life with professional custom t-shirt printing."
+            },
+            {
+                name: "Chazam Fans",
+                website: "chazamfans.com",
+                category: "Greek & HBCU Merchandise",
+                products: "Greek and HBCU fans and accessories",
+                description: "Celebrating Greek life and HBCU pride with quality fan merchandise."
+            },
+            {
+                name: "Alexis Gift Quilts",
+                website: "alexisgiftquilts.com",
+                category: "Handcrafted Textiles",
+                products: "Handmade quilts",
+                description: "Beautiful, handcrafted quilts made with love and attention to detail."
+            },
+            {
+                name: "Sista Teas",
+                website: "sistateas.com",
+                category: "Beverages",
+                products: "Specialty tea blends",
+                description: "Wellness-focused tea blends crafted for the modern woman."
+            },
+            {
+                name: "Actively BLACK",
+                website: "activelyblack.com",
+                category: "Activewear",
+                products: "Athletic and lifestyle clothing",
+                description: "Activewear that celebrates Black culture and promotes active living."
+            },
+            {
+                name: "Roll & Dough",
+                website: "rollanddough.com",
+                category: "Bakery",
+                address: "Locations in Ft. Lauderdale & Coral Gables",
+                products: "Artisan baked goods and pastries",
+                description: "Local South Florida bakery serving fresh, delicious baked goods daily."
+            },
+            {
+                name: "Kingdom Kitchen",
+                website: "kingdomzkitchen.com",
+                category: "Catering Services",
+                phone: "754-214-9151",
+                email: "KingdomzKitchen@gmail.com",
+                products: "Full-service catering",
+                description: "South Florida caterer bringing delicious, soul-satisfying meals to your events."
+            },
+            {
+                name: "Finer Things Greek",
+                website: "finerthingsgreek.com",
+                category: "Greek Paraphernalia",
+                phone: "915-256-8780",
+                products: "Greek organization merchandise and accessories",
+                description: "Premium Greek paraphernalia celebrating fraternity and sorority life."
+            },
+            {
+                name: "Diggin Her Roots Boutique",
+                website: "digginherroots.com",
+                category: "Greek & Cultural Merchandise",
+                phone: "804-803-3075",
+                products: "Greek paraphernalia and cultural items",
+                description: "Boutique celebrating heritage with Greek paraphernalia and more."
+            },
+            {
+                name: "Krav'n Something Sweet",
+                website: "Instagram: @Kravnsomthingsweet",
+                category: "Dessert Shop",
+                products: "Handcrafted desserts and sweet treats",
+                owner: "Krystal Aaron",
+                description: "Satisfying your sweet tooth with delicious handcrafted desserts."
+            }
+        ];
+
+        let currentPage = 0;
+
+        function renderBusiness(business, index) {
+            return `
+                <div class="business-page" id="page-${index}" style="display: ${index === 0 ? 'block' : 'none'}">
+                    <div class="business-header">
+                        <div class="business-name">${business.name}</div>
+                        <div class="business-category">🎁 ${business.category} 🎁</div>
+                    </div>
+                    
+                    <div class="business-content">
+                        <div>
+                            <div class="info-section">
+                                <h3>About</h3>
+                                <div class="info-item">${business.description}</div>
+                                <div class="info-item"><strong>Products/Services:</strong> ${business.products}</div>
+                            </div>
+                            
+                            <div class="info-section" style="margin-top: 20px;">
+                                <h3>Contact Information</h3>
+                                ${business.website && business.website !== 'N/A' ? `<div class="info-item"><strong>Website:</strong> ${business.website}</div>` : ''}
+                                ${business.phone ? `<div class="info-item"><strong>Phone:</strong> ${business.phone}</div>` : ''}
+                                ${business.email ? `<div class="info-item"><strong>Email:</strong> ${business.email}</div>` : ''}
+                                ${business.address ? `<div class="info-item"><strong>Address:</strong> ${business.address}</div>` : ''}
+                                ${business.website && business.website !== 'N/A' ? `<a href="https://${business.website}" class="website-link" target="_blank">Visit Website 🎄</a>` : ''}
+                            </div>
+                        </div>
+                        
+                        <div>
+                            ${business.founder || business.owner || business.quote ? `
+                                <div class="founder-section">
+                                    <h3>🌟 Meet the Founder${business.founder && business.founder.includes('&') ? 's' : ''}</h3>
+                                    ${business.founder ? `<div class="info-item" style="font-size: 18px; margin-top: 10px;">${business.founder}</div>` : ''}
+                                    ${business.owner ? `<div class="info-item" style="font-size: 18px; margin-top: 10px;">Owner: ${business.owner}</div>` : ''}
+                                    ${business.quote ? `<div class="quote">"${business.quote}"</div>` : ''}
+                                </div>
+                            ` : `
+                                <div class="info-section" style="background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%); color: white; text-align: center; padding: 60px 30px;">
+                                    <h3 style="color: #FFD700; font-size: 32px; margin-bottom: 20px;">🎅 Happy Holidays! 🎄</h3>
+                                    <p style="font-size: 18px; line-height: 1.8;">Support this amazing Black-owned business this holiday season and help build stronger communities together!</p>
+                                    <div style="margin-top: 30px; font-size: 40px;">✨🎁✨</div>
+                                </div>
+                            `}
+                            
+                            <div class="info-section" style="margin-top: 20px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); border-left: none; text-align: center;">
+                                <div style="font-size: 24px; color: #8B0000; font-weight: bold; margin-bottom: 10px;">Shop • Support • Celebrate</div>
+                                <div style="font-size: 16px; color: #fff;">This Christmas, choose Black-owned excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderAllBusinesses() {
+            const container = document.getElementById('businessPages');
+            container.innerHTML = businesses.map((business, index) => renderBusiness(business, index)).join('');
+        }
+
+        function updatePageIndicator() {
+            document.getElementById('pageIndicator').textContent = `Page ${currentPage + 1} of ${businesses.length}`;
+        }
+
+        function nextPage() {
+            if (currentPage < businesses.length - 1) {
+                document.getElementById(`page-${currentPage}`).style.display = 'none';
+                currentPage++;
+                document.getElementById(`page-${currentPage}`).style.display = 'block';
+                updatePageIndicator();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                document.getElementById(`page-${currentPage}`).style.display = 'none';
+                currentPage--;
+                document.getElementById(`page-${currentPage}`).style.display = 'block';
+                updatePageIndicator();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function showAll() {
+            businesses.forEach((_, index) => {
+                document.getElementById(`page-${index}`).style.display = 'block';
+            });
+        }
+
+        // Initialize
+        renderAllBusinesses();
+        updatePageIndicator();
+    </script>
+</body>
+</html>
